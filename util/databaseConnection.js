@@ -1,19 +1,38 @@
-import mongoose from "mongoose";
+import { MongoClient } from "mongodb";
 
-const connection = {};
+let uri = process.env.MONGODB_URI;
+let dbName = process.env.MONGODB_DBNAME;
 
-async function dbConnect() {
-  if (connection.isConnected) {
-    console.log("already Connected");
-    return;
+let cachedClient = null;
+let cachedDb = null;
+
+if (!uri) {
+  throw new Error(
+    "Please define the MONGODB_URI environment variable inside .env.local",
+    console.log(uri)
+  );
+}
+
+if (!dbName) {
+  throw new Error(
+    "Please define the MONGODB_DB environment variable inside .env.local"
+  );
+}
+
+export async function connectToDatabase() {
+  if (cachedClient && cachedDb) {
+    return { client: cachedClient, db: cachedDb };
   }
 
-  const db = await mongoose.connect(process.env.MONGODB_URI, {
+  const client = await MongoClient.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
 
-  connection.isConnected = db.connections[0].readyState;
-}
+  const dbConnect = await client.db(dbName);
 
-export default dbConnect;
+  cachedClient = client;
+  cachedDb = dbConnect;
+
+  return { client, dbConnect };
+}

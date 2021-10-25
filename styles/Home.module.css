@@ -119,3 +119,34 @@
     flex-direction: column;
   }
 }
+.BannerContainer {
+  position: absolute;
+  top: 230px;
+}
+.Bannertitle {
+  font-size: 34px;
+  margin-left: 100px;
+}
+
+.Bannersubtitle {
+  font-size: 46px;
+  margin-left: 230px;
+  color: #232323;
+  margin-top: -20px;
+}
+
+.Bannerdescri {
+  text-align: center;
+  margin-left: 80px;
+}
+
+.Bannerbutton {
+  width: 120px;
+  height: 40px;
+  background-color: #ffd000;
+  margin-left: 250px;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 700;
+  color: #232323;
+}

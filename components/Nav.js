@@ -1,12 +1,15 @@
+/* eslint-disable @next/next/link-passhref */
 import Link from "next/link";
 import navStyle from "../styles/Header.module.css";
 function Nav() {
   return (
     <div className={navStyle.navContainer}>
       <nav className={navStyle.nav}>
-        <div className={navStyle.logo}>
-          <h1>HIGHER</h1>
-        </div>
+        <Link href="/">
+          <div className={navStyle.logo}>
+            <h1>HIGHER</h1>
+          </div>
+        </Link>
         <ul>
           <li>
             <Link href="/search">
