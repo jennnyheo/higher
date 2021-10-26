@@ -42,7 +42,7 @@ function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="">
+            <Link href="/login">
               <a>로그인/회원가입</a>
             </Link>
           </li>

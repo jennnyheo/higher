@@ -1,3 +1,4 @@
+import { Axios } from "axios";
 import React from "react";
 
 const index = ({ jobs, error }) => {
@@ -19,7 +20,7 @@ export default index;
 
 index.getInitialProps = async (ctx) => {
   try {
-    const res = await axios.get("http://localhost:3000/api/sample");
+    const res = await Axios.get("http://localhost:3000/api/sample");
     const jobs = res.data;
     return { jobs };
   } catch (error) {
