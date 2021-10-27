@@ -85,7 +85,7 @@ export default function search({ jobs }) {
 }
 
 search.getInitialProps = async () => {
-  const res = await fetch("http://localhost:3000/api/sample");
+  const res = await fetch("http://localhost:3000/api/search/result");
   const data = await res.json();
   // const data = await res.json();
   return { jobs: data };
