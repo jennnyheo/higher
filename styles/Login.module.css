@@ -1,0 +1,87 @@
+/* logon total background */
+.background {
+  padding: 0;
+  width: 100%;
+  height: 200%;
+  background-color: rgba(0, 0, 0, 0.557);
+  position: absolute;
+  top: 0;
+  z-index: 8;
+  transition: 1s ease-in;
+}
+/* modal form + header = this.container */
+.container {
+  width: 380px;
+  height: 450px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  padding-bottom: 15px;
+  z-index: 99;
+  position: absolute;
+  background-color: #ffffff;
+  top: -850px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* modal closing icon */
+.closed {
+  width: 30px;
+  margin: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  transition: 1s ease-in-out;
+}
+/* login modal header - logo included */
+.header {
+  width: 300px;
+  margin: auto;
+  text-align: center;
+}
+.header h3 {
+  color: #666666;
+  font-size: 15px;
+}
+.header p {
+  font-size: 24px;
+  font-weight: 700;
+}
+.header p:nth-child(3) {
+  margin-top: -22px;
+}
+
+.header span {
+  color: #777777;
+}
+.form {
+  margin: 0px auto;
+}
+
+.form div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+}
+.form div input {
+  width: 300px;
+  height: 40px;
+  border-radius: 7px;
+  border: 1px solid #dddddd;
+  padding-left: 8px;
+}
+
+.form button {
+  width: 300px;
+  height: 40px;
+  border-radius: 9999px;
+  border: none;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: rgb(72, 72, 248);
+  font-size: 16px;
+}

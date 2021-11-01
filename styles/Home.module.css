@@ -113,12 +113,6 @@
   margin-left: 0.5rem;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-}
 .BannerContainer {
   position: absolute;
   top: 230px;
@@ -149,4 +143,42 @@
   border-radius: 9999px;
   font-weight: 700;
   color: #232323;
+}
+
+/* media query */
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+/* banner font-size */
+
+@media (max-width: 600px) {
+  .BannerContainer {
+    position: absolute;
+    top: 250px;
+  }
+  .Bannertitle {
+    font-size: 24px;
+    margin-left: 80px;
+  }
+
+  .Bannersubtitle {
+    font-size: 30px;
+    margin-left: 170px;
+    color: #232323;
+    margin-top: -20px;
+  }
+
+  .Bannerdescri {
+    text-align: center;
+    margin-left: 55px;
+  }
+
+  .Bannerbutton {
+    margin-left: 165px;
+  }
 }

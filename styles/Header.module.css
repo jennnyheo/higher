@@ -17,10 +17,11 @@
 }
 
 .logo h1 {
-  font-size: 16px;
+  font-size: 18px;
   color: #666666;
+  padding-top: 1px;
 }
-.nav ul {
+.nav .lists {
   width: 90%;
   display: flex;
   margin-top: 20px;
@@ -28,4 +29,42 @@
   justify-content: space-between;
   font-weight: 700;
   font-size: 14px;
+}
+
+/* this will show up when screen size is smaller then 850px */
+
+.moblieNav {
+  display: none;
+}
+.moblieNavBars {
+  margin-top: 17px;
+}
+
+.moblieMenus {
+  position: absolute;
+  left: 0;
+  z-index: 7;
+  background-color: #ffffff;
+  width: 100%;
+}
+.moblieMenus > li {
+  text-align: center;
+  padding: 10px;
+  font-weight: 700;
+  margin-right: 50px;
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 850px) {
+  .logo {
+    padding: 0 10px 0 10px;
+  }
+  .nav .lists {
+    display: none;
+  }
+  .moblieNav {
+    display: block;
+    width: 100%;
+    text-align: right;
+  }
 }

@@ -1,9 +1,10 @@
 import React from "react";
+import LoginBox from "../components/LoginBox";
 
 const login = () => {
   return (
     <div>
-      <h1>로그인페이지 입니다.</h1>
+      <LoginBox />
     </div>
   );
 };
