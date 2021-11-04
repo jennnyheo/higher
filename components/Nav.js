@@ -5,7 +5,7 @@ import LoginBox from "./LoginBox";
 import { FaBars } from "react-icons/fa";
 
 function Nav() {
-  const [isOpen, setIsOpen] = useState(false); //login modal
+  const [isOpened, setIsOpened] = useState(false); //login modal
   const [moblieNav, setMoblieNav] = useState(false);
   return (
     <div className={navStyle.navContainer}>
@@ -50,7 +50,7 @@ function Nav() {
           </li>
           <li
             onClick={() => {
-              setIsOpen(true);
+              setIsOpened(true);
             }}
           >
             로그인/회원가입
@@ -97,7 +97,7 @@ function Nav() {
               </li>
               <li
                 onClick={() => {
-                  setIsOpen(true);
+                  setIsOpened(true);
                 }}
               >
                 로그인/회원가입
@@ -107,7 +107,7 @@ function Nav() {
         </div>
       </nav>
 
-      {isOpen && <LoginBox isOpened={setIsOpen} />}
+      {isOpened && <LoginBox isOpened={setIsOpened} />}
     </div>
   );
 }

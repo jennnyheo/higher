@@ -4,6 +4,7 @@ import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
 import SearTempStyle from "../styles/SearchTemplate.module.css";
+import GoogleMap from "./GoogleMap";
 
 const SearchTemplate = ({ item }) => {
   useEffect(() => {
@@ -78,13 +79,31 @@ const SearchTemplate = ({ item }) => {
           <p>
             근무지역 <span>주소</span>
           </p>
-
-          <div
+          <GoogleMap
+            onLoad={(map) => {
+              const bounds = new window.google.maps.LatLngBounds();
+              map.fitBounds(bounds);
+            }}
+          />
+          {/* <GoogleMaps
+            id="myMap"
+            className={SearTempStyle.map}
+            width={650}
+            height={450}
+            option={{
+              center: {
+                lat: -33.8569,
+                lng: 151.2152,
+              },
+              zoom: 8,
+            }}
+          /> */}
+          {/* <div
             id="map"
             width={650}
             height={450}
             className={SearTempStyle.map}
-          ></div>
+          ></div> */}
         </section>
       </div>
       <section className={SearTempStyle.section}>
