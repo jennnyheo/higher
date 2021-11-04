@@ -1,4 +1,5 @@
 import { MongoClient } from "mongodb";
+// import { mongoose } from "mongoose";
 
 let uri = process.env.MONGODB_URI;
 let dbName = process.env.MONGODB_DBNAME;
@@ -35,4 +36,21 @@ export async function connectToDatabase() {
   cachedDb = dbConnect;
 
   return { client, dbConnect };
+}
+
+// export async function disconnectionToDatabase() {
+//   if (connection.isConnected) {
+//     if (process.env.NODE_ENV === "production") {
+//       await mongoose.disconnect();
+//       connection.isConnected = false;
+//     } else {
+//       console.log("not disconnected");
+//     }
+//   }
+// }
+
+export async function close() {
+  if (cachedClient && cachedDb) {
+    await MongoClient.close();
+  }
 }
