@@ -11,4 +11,4 @@ Job matching websites especially for developers
 - React, Next
 - for the DATABASE, I used MONGODB
 
-#### newly update ( 2021-11-01 ) ADD modal login Screen, ADD media query( menu bar )
+#### newly update ( 2021-11-05 ) ADD login function with jwt token and bcrypt for password
