@@ -2,14 +2,22 @@ import loginStyle from "../styles/Login.module.css";
 import { FaTimes } from "react-icons/fa";
 import axios from "axios";
 import { useState } from "react";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 
 const LoginBox = ({ isOpened }) => {
+  const router = useRouter();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
       const { data } = await axios.post("/api/user/login", { email, password });
+      dispatch({ type: "USER_LOGIN", payload: data });
+      Cookies.set("userInfo", data);
+      router.push("/");
       alert("OK");
     } catch (error) {
       alert(error.response.data ? error.response.data : error.message);
