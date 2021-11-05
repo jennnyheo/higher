@@ -1,12 +1,28 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import navStyle from "../styles/Header.module.css";
 import LoginBox from "./LoginBox";
 import { FaBars } from "react-icons/fa";
+import { useRouter } from "next/router";
+import { Store } from "../Store";
+import Cookies from "js-cookie";
 
 function Nav() {
   const [isOpened, setIsOpened] = useState(false); //login modal
   const [moblieNav, setMoblieNav] = useState(false);
+
+  const [isLogoutOpen, setIsLogoutOpen] = useState(false); //logout menu show & hidden
+  const router = useRouter();
+  const { state, dispatch } = useContext(Store);
+
+  const logoutHandler = (e) => {
+    e.preventDefault();
+    dispatch({ type: "USER_LOGOUT" });
+    Cookies.remove("userInfo");
+    router.push("/");
+  };
+  const { userInfo } = state;
+
   return (
     <div className={navStyle.navContainer}>
       <nav className={navStyle.nav}>
@@ -48,13 +64,33 @@ function Nav() {
               <a>프리랜서</a>
             </Link>
           </li>
-          <li
-            onClick={() => {
-              setIsOpened(true);
-            }}
-          >
-            로그인/회원가입
-          </li>
+          {userInfo ? (
+            <>
+              <li
+                onClick={() => {
+                  setIsLogoutOpen((prev) => (prev ? false : true));
+                }}
+              >
+                {userInfo.name} 님
+              </li>
+              <ul className={navStyle.submenu}>
+                {isLogoutOpen && (
+                  <>
+                    <li onClick={logoutHandler}>로그아웃</li>
+                    <li>마이페이지</li>
+                  </>
+                )}
+              </ul>
+            </>
+          ) : (
+            <li
+              onClick={() => {
+                setIsOpened(true);
+              }}
+            >
+              로그인/회원가입
+            </li>
+          )}
         </ul>
         <div className={navStyle.moblieNav}>
           <div
@@ -95,13 +131,21 @@ function Nav() {
                   <a>프리랜서</a>
                 </Link>
               </li>
-              <li
-                onClick={() => {
-                  setIsOpened(true);
-                }}
-              >
-                로그인/회원가입
-              </li>
+              {userInfo ? (
+                <>
+                  <li>{userInfo.name}</li>
+                </>
+              ) : (
+                <ul>
+                  <li
+                    onClick={() => {
+                      setIsOpened(true);
+                    }}
+                  >
+                    로그인/회원가입
+                  </li>
+                </ul>
+              )}
             </ul>
           )}
         </div>
