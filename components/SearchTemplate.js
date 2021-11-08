@@ -1,19 +1,41 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import Head from "next/head";
+import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
-import SearTempStyle from "../../styles/SearchTemplate.module.css";
+import SearTempStyle from "../styles/SearchTemplate.module.css";
 import GoogleMap from "./GoogleMap";
 
 const SearchTemplate = ({ item }) => {
-  let date = item.expire;
-  let expireDate = date.substr(0, 10);
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src =
+      "https://dapi.kakao.com/v2/maps/sdk.js?appkey=ba0ed208919b1403041b38efe9809fe8&libraries=services&autoload=false";
+    document.head.appendChild(script);
+
+    script.load = () => {
+      kakao.maps.load(() => {
+        // let el = document.getElementById("map");
+        let container = document.getElementById("map");
+        let options = {
+          center: new window.kakao.maps.LatLng(33.450701, 126.570667),
+          level: 3,
+        };
+        // let map = new kakao.maps.Map(el, {
+        //   center: new kakao.maps.LatLng(37.506502, 127.053617),
+        // });
+        new window.kakao.maps.Map(container, options);
+      });
+    };
+  });
+
   return (
     <div className={SearTempStyle.pageContainer}>
       <div className={SearTempStyle.contContainer}>
         <Image src={item.url} alt="companyphoto" width={650} height={450} />
         <h2>{item.title}</h2>
-        <p>경력사항 : {item.experiment !== 0 ? "경력" : "신입/경력"}</p>
+        <p>경력사항 : {(item.experiment = "0" ? "신입" : "경력")}</p>
 
         <div className={SearTempStyle.cateContainer}>
           <p className={SearTempStyle.company}>{item.company}</p>
@@ -52,10 +74,10 @@ const SearchTemplate = ({ item }) => {
         <section>
           <div className={SearTempStyle.divider}></div>
           <p>
-            마감일 : <span>{item.expire ? expireDate : ""}</span>
+            마감일 <span>상시</span>
           </p>
           <p>
-            근무지역 : <span> {item.address}</span>
+            근무지역 <span>주소</span>
           </p>
           <GoogleMap
             onLoad={(map) => {

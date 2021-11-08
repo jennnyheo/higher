@@ -1,9 +1,12 @@
-import db from "../../../lib/databaseConnection";
-import JobList from "../../../model/JobList";
+import { connectToDatabase } from "../../../lib/databaseConnection";
 
 export default async function handler(req, res) {
-  await db.connectToDatabase();
-  const job = await JobList.findById(req.query.id);
-  await db.disconnectToDatabase();
-  res.send(job);
+  const { id } = req.query;
+  const { db } = await connectToDatabase();
+  const jobs = await db
+    .collection("jobList")
+    .find({ _id: parseInt(id) })
+    .toArray();
+  console.log(id);
+  res.json(jobs);
 }
