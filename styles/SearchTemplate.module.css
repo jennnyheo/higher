@@ -1,6 +1,6 @@
 .pageContainer {
   width: 70%;
-  margin: 35px auto;
+  margin: auto;
   display: flex;
 }
 .contContainer {
