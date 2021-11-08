@@ -4,12 +4,9 @@ import JobList from "../../../model/JobList";
 
 const handler = nc();
 
-handler.get(async (req, res) => {
+export default handler.get(async (req, res) => {
   await db.connectToDatabase();
-  const joblist = await JobList.findById(req.query.id);
+  const jobLists = await JobList.find({});
+  res.send(jobLists);
   await db.disconnectToDatabase();
-
-  res.send(joblist);
 });
-
-export default handler;

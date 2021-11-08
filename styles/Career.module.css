@@ -1,0 +1,191 @@
+.container {
+  width: 800px;
+  height: 80px;
+  margin: 20px auto;
+  overflow: hidden;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.container span {
+  display: block;
+  font-size: 12px;
+  border-radius: 7px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  margin-right: 20px;
+  background-color: #eeeeee;
+}
+
+.container button {
+  display: block;
+  width: 80px;
+  height: 100%;
+  z-index: 3;
+  padding: 10px;
+  width: 100px;
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(hsla(0, 0%, 100%, 0)),
+    color-stop(50%, #ffff)
+  );
+  background-image: linear-gradient(270deg, hsla(0, 0%, 100%, 0), #fff 50%);
+}
+
+.container button::before {
+  font-size: 30px;
+  width: 80px;
+  height: 120%;
+  box-sizing: border-box;
+  padding-top: 25px;
+  color: gray;
+  z-index: 9;
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(hsla(0, 0%, 100%, 0)),
+    color-stop(50%, #ffff)
+  );
+  background-image: linear-gradient(170deg, hsla(0, 0%, 100%, 0), #fff 50%);
+}
+.slick-track {
+  background-color: beige;
+}
+
+.slick-list {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 80 px;
+  height: 54 px;
+  left: 0;
+  background-color: gold;
+}
+
+.banneContainer {
+  width: 100%;
+  height: 50vh;
+  background-color: #232323;
+  text-align: center;
+  padding-top: 50px;
+}
+.banneContainer > span {
+  font-weight: 700;
+  color: #eeeeee;
+}
+.banneContainer h1 {
+  font-size: 18px;
+  color: #eeeeee;
+  font-weight: 700;
+}
+.banneText {
+  font-size: 78px;
+  font-weight: 900;
+  margin-top: 20px;
+  color: #eeeeee;
+}
+/* career card cardContainer */
+
+.cardContainer {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  width: 260px;
+  height: 335px;
+  margin: 10px 10px 10px 10px;
+  text-align: center;
+  border-radius: 10px;
+  padding-top: 3px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.card img {
+  border-radius: 5px;
+}
+.card .categories {
+  display: flex;
+  margin-left: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.card button {
+  display: block;
+  margin-right: 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  padding: 3px 7px 3px 7px;
+}
+
+.card button.online {
+  background-color: #232323;
+  color: #eeeeee;
+}
+.card button.community {
+  background-color: #f7f7f7;
+  color: #a709b6;
+  border: 1px solid #b70cc7;
+}
+
+.card button.article {
+  background-color: #f7f7f7;
+  color: #ff9300;
+  border: 1px solid #ff9300;
+}
+.title {
+  width: 90%;
+  height: 50px;
+  display: block;
+  margin: 3px auto;
+  text-align: center;
+  color: #232323;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+.duration {
+  color: #565656;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-around;
+}
+
+.duration button {
+  border: none;
+  border-radius: 5px;
+}
+.duration span {
+  padding-right: 15px;
+}
+.still {
+  background-color: rgb(60, 60, 151);
+  color: #eeeeee;
+}
+.expired {
+  color: #232323;
+  background-color: #eeeeee;
+}
+
+.tags {
+  margin-top: -3px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+.tags span {
+  font-size: 12px;
+  font-weight: 700;
+  margin-right: 7px;
+  color: #565656;
+}

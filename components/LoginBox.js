@@ -3,9 +3,7 @@ import { FaTimes } from "react-icons/fa";
 import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
-import Cookies from "js-cookie";
 import cookie from "react-cookies";
-import ck from "next-cookies";
 import { Store } from "../Store";
 
 const LoginBox = ({ isOpened }) => {
@@ -29,13 +27,21 @@ const LoginBox = ({ isOpened }) => {
       dispatch({ type: "USER_LOGIN", payload: data });
       // Cookies.set("userInfo", data);
       cookie.save("userInfo", data);
-      alert("OK");
+      console.log(email);
+      alert("로그인 되었습니다");
       router.push(redirect || "/");
       isOpened(false);
     } catch (error) {
       alert(error.response.data ? error.response.data : error.message);
     }
   };
+  const goToRegister = (e) => {
+    e.preventDefault();
+    alert("회원가입으로 이동하시겠습니까? ");
+    isOpened(false);
+    router.push("/register");
+  };
+
   return (
     <div className={loginStyle.background}>
       <div className={loginStyle.container}>
@@ -54,7 +60,7 @@ const LoginBox = ({ isOpened }) => {
           <div>
             <input
               type="text"
-              placeholder="ID"
+              placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -68,6 +74,9 @@ const LoginBox = ({ isOpened }) => {
           <div>
             <button type="submit">로그인</button>
           </div>
+          <p className={loginStyle.goToRegister}>
+            <span onClick={goToRegister}>아직 회원이 아니라면</span>
+          </p>
         </form>
       </div>
     </div>

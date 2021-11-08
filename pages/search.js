@@ -1,10 +1,9 @@
 import React from "react";
-import Filter from "../components/Filter";
+import Filter from "../components/Search/Filter";
 import HeadInfo from "../components/HeadInfo";
-import { JobCard } from "../components/JobCard";
-import { connectToDatabase } from "../lib/databaseConnection";
 import cardStyle from "../styles/Card.module.css";
 import searchStyle from "../styles/Search.module.css";
+import { JobCard } from "../components/JobCard";
 
 export default function search({ jobs }) {
   return (
@@ -29,20 +28,18 @@ export default function search({ jobs }) {
   );
 }
 
-// search.getInitialProps = async () => {
-//   const res = await fetch("http://localhost:3000/api/search/result");
-//   const data = await res.json();
-//   // const data = await res.json();
-//   return { jobs: data };
-// };
+search.getInitialProps = async () => {
+  const res = await fetch("http://localhost:3000/api/search");
+  const data = await res.json();
+  console.log(data);
+  return { jobs: data };
+};
 
-export async function getServerSideProps(context) {
-  const { db } = await connectToDatabase();
-  const data = await db.collection("jobList").find({}).toArray();
-  const jobs = JSON.parse(JSON.stringify(data));
-
-  console.log(jobs);
-  return {
-    props: { jobs: jobs },
-  };
-}
+// export async function getServerSideProps() {
+//   await db.connectToDatabase();
+//   const joblist = await JobList.find({});
+//   await db.disconnectToDatabase();
+//   return {
+//     props: { jobs: joblist.map(db.convertDocToObj) },
+//   };
+// }

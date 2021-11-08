@@ -1,5 +1,5 @@
 import React from "react";
-import searchStyle from "../styles/Search.module.css";
+import searchStyle from "../../styles/Search.module.css";
 import Image from "next/image";
 
 const Filter = () => {

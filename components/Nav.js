@@ -40,7 +40,7 @@ function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="/careerUp">
+            <Link href="/career">
               <a>커리어 성장</a>
             </Link>
           </li>

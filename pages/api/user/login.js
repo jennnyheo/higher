@@ -1,12 +1,14 @@
 import nextConnect from "next-connect";
-import { connectToDatabase } from "../../../lib/databaseConnection";
+import db from "../../../lib/databaseConnection";
 import bcrypt from "bcryptjs";
 import { signToken } from "../../../lib/auth";
+import User from "../../../model/User";
 
 const handler = nextConnect();
 handler.post(async (req, res) => {
-  const { db } = await connectToDatabase();
-  const user = await db.collection("User").findOne({ email: req.body.email });
+  await db.connectToDatabase();
+  const user = await User.findOne({ email: req.body.email });
+  await db.disconnectToDatabase();
   if (user && bcrypt.compareSync(req.body.password, user.password)) {
     const token = signToken(user);
     res.send({

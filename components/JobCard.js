@@ -10,10 +10,13 @@ export const JobCard = ({ jobs }) => {
           <a>
             <Image src={jobs.url} alt="companyphoto" width={250} height={180} />
             <span className={cardStyle.title}>{jobs.title}</span>
+            <div className={cardStyle.company}>
+              <span>{jobs.company}</span>
+            </div>
             <div className={cardStyle.container}>
               <span className={cardStyle.category}>{jobs.category[0]}</span>
               <span className={cardStyle.experiment}>
-                {(jobs.experiment = "0" ? "신입" : "경력")}
+                {jobs.experiment === 0 ? "신입" : "신입/경력"}
               </span>
             </div>
           </a>
