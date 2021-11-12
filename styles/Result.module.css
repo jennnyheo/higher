@@ -1,0 +1,57 @@
+.container {
+  width: 100%;
+}
+
+.headerContainer {
+  width: 100%;
+  text-align: center;
+  height: 180px;
+  padding-top: 30px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.headerContainer h2 {
+  font-weight: 300;
+  font-size: 48px;
+}
+
+.resultContainer {
+  padding-left: 120px;
+  padding-top: 30px;
+}
+.resultContainer span {
+  font-size: 24px;
+  font-weight: 600;
+  color: #565656;
+}
+
+.noResultContainer {
+  width: 700px;
+  margin: auto;
+}
+
+.noResultContainer div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  margin: auto;
+}
+.noResultContainer div p {
+  height: 40px;
+}
+.noResultContainer div button {
+  width: 250px;
+  height: 40px;
+  border-radius: 9999px;
+  border: none;
+  background-color: rgb(72, 72, 248);
+  color: #eeeeee;
+  font-weight: 600;
+}
+
+.container input {
+  margin-left: 120px;
+  margin-top: -50px;
+}

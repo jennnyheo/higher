@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  height: 175px;
+  z-index: 9;
+  background-color: #ffffffff;
+  border-bottom: 1px solid #dddddd;
+}
+.header {
+  width: 700px;
+  margin: 30px auto;
+}
+.container input {
+  width: 700px;
+  height: 45px;
+  border-radius: 9999px;
+  padding-left: 15px;
+  border: none;
+  background-color: #eeeeeeee;
+}

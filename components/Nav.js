@@ -6,11 +6,15 @@ import { FaBars } from "react-icons/fa";
 import { useRouter } from "next/router";
 import { Store } from "../Store";
 import Cookies from "js-cookie";
+import { GoSearch } from "react-icons/go";
+import SearchModal from "./Search/SearchModal";
 
 function Nav() {
   const [isOpened, setIsOpened] = useState(false); //login modal
   const [moblieNav, setMoblieNav] = useState(false);
-
+  const [searchOpen, setSearchOpend] = useState(false); //search modal open and close
+  console.log(searchOpen);
+  console.log(setSearchOpend);
   const [isLogoutOpen, setIsLogoutOpen] = useState(false); //logout menu show & hidden
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
@@ -64,11 +68,15 @@ function Nav() {
               <a>프리랜서</a>
             </Link>
           </li>
+          <li onClick={() => setSearchOpend((prev) => (prev ? false : true))}>
+            <GoSearch /> 검색
+          </li>
           {userInfo ? (
             <>
               <li
                 onClick={() => {
                   setIsLogoutOpen((prev) => (prev ? false : true));
+                  console.log(searchOpen);
                 }}
               >
                 {userInfo.name} 님
@@ -152,6 +160,7 @@ function Nav() {
       </nav>
 
       {isOpened && <LoginBox isOpened={setIsOpened} />}
+      {searchOpen && <SearchModal setSearchOpend={searchOpen} />}
     </div>
   );
 }
