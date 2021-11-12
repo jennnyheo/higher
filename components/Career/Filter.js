@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { FiChevronLeft } from "react-icons/fi";
 import { FiChevronRight } from "react-icons/fi";
 import Slider from "react-slick";
@@ -22,39 +23,62 @@ const Filter = () => {
           <FiChevronLeft />
         </button> */}
 
-          <div>
-            <span>전체</span>
-          </div>
-          <div>
-            <span>Higher Plus</span>
-          </div>
-          <div>
-            <span>인사</span>
-          </div>
-          <div>
-            <span>Higher Edit</span>
-          </div>
-          <div>
-            <span>커리어</span>
-          </div>
-          <div>
-            <span>기술/IT</span>
-          </div>
-          <div>
-            <span>UX</span>
-          </div>
-          <div>
-            <span>데이터</span>
-          </div>
-          <div>
-            <span>보안</span>
-          </div>
-          <div>
-            <span>웹 기획</span>
-          </div>
-          <div>
-            <span>금융</span>
-          </div>
+          <Link href="/career">
+            <a>
+              <span>전체</span>
+            </a>
+          </Link>
+
+          <Link href="/career/category?category=Higher Plus">
+            <a>
+              <span>Higher Plus</span>
+            </a>
+          </Link>
+          <Link href="/career/category?category=인사">
+            <a>
+              <span>인사</span>
+            </a>
+          </Link>
+          <Link href="/career/category?category=Higher Edit">
+            <a>
+              <span>Higher Edit</span>
+            </a>
+          </Link>
+          <Link href="/career/category?category=커리어">
+            <a>
+              <span>커리어</span>
+            </a>
+          </Link>
+          <Link href="/career/category?category=기술/IT">
+            <a>
+              <span>기술/IT</span>
+            </a>
+          </Link>
+          <Link href="/career/category?category=UX">
+            <a>
+              <span>UX</span>
+            </a>
+          </Link>
+          <Link href="/career/category?category=데이터">
+            <a>
+              <span>데이터</span>
+            </a>
+          </Link>
+          <Link href="/career/category?category=보안">
+            <a>
+              <span>보안</span>
+            </a>
+          </Link>
+          <Link href="/career/category?category=웹 기획">
+            <a>
+              <span>웹 기획</span>
+            </a>
+          </Link>
+          <Link href="/career/category?category=금융">
+            <a>
+              <span>금융</span>
+            </a>
+          </Link>
 
           {/* <button>
           <FiChevronRight />

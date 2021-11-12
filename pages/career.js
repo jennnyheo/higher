@@ -15,6 +15,9 @@ const career = ({ careers }) => {
         <h1>HIGHER</h1>
       </div>
       <Filter />
+      <div className={careerStyle.filterCategory}>
+        <span> 전체 </span>
+      </div>
       <div className={careerStyle.cardContainer}>
         {careers.map((career) => {
           return (

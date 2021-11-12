@@ -296,3 +296,23 @@
   font-weight: 600;
   color: #565656;
 }
+
+.filterCategory {
+  width: 500px;
+  margin-left: 150px;
+  margin-bottom: 10px;
+}
+
+.filterCategory span {
+  font-weight: 700;
+}
+
+.filterCategory button {
+  border: none;
+  background-color: rgb(72, 72, 248);
+  padding: 7px 18px 7px 18px;
+  color: #eeeeee;
+  border-radius: 9999px;
+  margin-left: 10px;
+  margin-top: -3px;
+}
