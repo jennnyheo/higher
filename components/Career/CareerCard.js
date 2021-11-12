@@ -14,7 +14,7 @@ const CareerCard = ({ career }) => {
   return (
     <div>
       <div className={careerStyle.card}>
-        <Link href={`/careers/${career._id}`}>
+        <Link href={`/career/career?careerid=${career._id}`}>
           <a>
             <Image src={career.img} width={250} height={180} alt={career.id} />
             <div className={careerStyle.categories}>
