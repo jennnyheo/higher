@@ -30,12 +30,12 @@
 ###### tech
 ## Tech Stack
 
-<img src="https://img.shields.io/badge/MongoDB-white?style=for-the-badge&logo=mongodb&logoColor=4EA94B"/></a> 
-<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/></a> 
+<img src="https://img.shields.io/badge/MongoDB-white?style=flat-squar&logo=mongodb&logoColor=4EA94B"/></a> 
+<img src="https://img.shields.io/badge/React-20232A?style=flat-squar&logo=react&logoColor=61DAFB"/></a> 
 <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=MongoDB&logoColor=white"/></a> 
 
 - React, Next
-- for the DATABASE, I used MONGODB
+- for the DATABASE,  MONGODB
 
 #### last commit ( 2021-11-12 ) ADD search function
 
